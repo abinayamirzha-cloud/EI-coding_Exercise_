@@ -80,7 +80,9 @@ Hides Socket details, making the client code independent of networking implement
 
 // Adapter Interface
 interface ClientConnection {
+
     void send(String message);
+    
     String receive() throws IOException;
 }
 // Concrete Adapter
