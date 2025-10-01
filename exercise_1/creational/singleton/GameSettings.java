@@ -1,37 +1,29 @@
-// Singleton class to manage game settings
+// Singleton class
 public class GameSettings {
-    // Single private static instance
+    // Only one instance
     private static GameSettings instance;
 
-    // Game settings variables
-    private String difficulty;
-    private int maxPlayers;
+    // Some settings
+    private String difficulty = "Medium";
+    private int maxPlayers = 4;
 
-    // Private constructor to prevent external instantiation
-    private GameSettings() {
-        // default settings
-        this.difficulty = "Medium";
-        this.maxPlayers = 4;
-    }
+    // Private constructor
+    private GameSettings() {}
 
-    // Public method to get the single instance (lazy initialization)
-    public static synchronized GameSettings getInstance() {
+    // Get the single instance
+    public static GameSettings getInstance() {
         if (instance == null) {
             instance = new GameSettings();
         }
         return instance;
     }
 
-    // Getters and setters
-    public String getDifficulty() { return difficulty; }
+    // Methods
     public void setDifficulty(String difficulty) { this.difficulty = difficulty; }
-
-    public int getMaxPlayers() { return maxPlayers; }
     public void setMaxPlayers(int maxPlayers) { this.maxPlayers = maxPlayers; }
 
-    // Display settings
     public void showSettings() {
-        System.out.println("Game Difficulty: " + difficulty);
+        System.out.println("Difficulty: " + difficulty);
         System.out.println("Max Players: " + maxPlayers);
     }
 }
