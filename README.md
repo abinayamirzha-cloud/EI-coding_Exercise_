@@ -1,9 +1,13 @@
-Exercise1:
- Exercise 1: Problem Statement on Design patterns 
+
+**Exercise 1:**
+ 
+ Problem Statement on Design patterns 
  1. Two use cases to demonstrate two behavioural design pattern.
  2. Two use cases to demonstrate two creational design pattern. 
 3. Two use cases to demonstrate two structural design pattern
-Exercise2:
+
+   
+**Exercise2:**
  5. Real-time Chat Application Programming Exercise
  Problem Statement
  Create a simple real-time chat application where users can join different chat rooms or create
