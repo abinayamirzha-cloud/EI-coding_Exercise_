@@ -29,23 +29,31 @@ features
      <img width="874" height="179" alt="image" src="https://github.com/user-attachments/assets/dc734297-597e-452f-a30a-83bf2f90522c" />
      when new person joins it will show the history
      <img width="949" height="346" alt="image" src="https://github.com/user-attachments/assets/3eb467f7-1be3-4b02-8e14-27b32517d72d" />
+
+ 6. switch between the chatrooms
+  <img width="689" height="176" alt="image" src="https://github.com/user-attachments/assets/57db73c6-5f3c-4433-83db-2c3f3e8b2f9c" />
+  
+
+        
 **design pattern focused:**
 
-
+   
     **1**  Singleton (ChatRoom)
 Only one instance per room exists. If a room already exists, it is reused.
   
 class ChatRoom {
+
     private static final Map<String, ChatRoom> INSTANCES = new HashMap<>();
+    
     private final String roomId;
-
+    
     private ChatRoom(String roomId) { this.roomId = roomId; }
-
     // Singleton 
+    
     public static ChatRoom getInstance(String roomId) {
         return INSTANCES.computeIfAbsent(roomId, ChatRoom::new);
     }
-}
+    }
 
 Ensures memory efficiency & prevents duplicate rooms.
 Example: /join Room1 → Always gives the same Room1 instance.
@@ -57,6 +65,7 @@ Clients subscribe to a room, and when someone sends a message, all observers get
 
 
 interface ChatObserver {
+
     void update(String message);  // Observer receives updates
 }
 
