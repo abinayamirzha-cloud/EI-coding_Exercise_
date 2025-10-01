@@ -1,15 +1,15 @@
 **Use Case**
 
-The Strategy Pattern is used when multiple algorithms can solve the same problem, and the choice of algorithm must be dynamic. In this example, a travel app can calculate routes using fastest, shortest, or eco-friendly strategies. Users can switch strategies at runtime without changing the underlying code. It separates the algorithm logic from the context, making the system flexible and maintainable.
+The Observer Pattern is used when a one-to-many dependency exists and multiple objects need to be updated automatically when the subject changes. In this example, a news agency can notify all registered subscribers whenever a new article is published. Subscribers can join or leave dynamically, and updates happen without changing the subject’s core logic. This ensures decoupled, maintainable, and real-time notifications.
 
 **Key Roles in This Example**
 
-**Strategy (RouteStrategy)** – Defines the common interface for all route calculation algorithms (buildRoute).
+**Subject (NewsAgency)** – Maintains a list of observers (subscribers) and notifies them of state changes (new articles).
 
-**Concrete Strategies (FastestRoute, ShortestRoute, EcoFriendlyRoute)** – Implement specific algorithms for route calculation according to the chosen strategy.
+**Observer (Observer interface)** – Declares the update method that all concrete observers must implement to receive notifications.
 
-**Context (TravelContext)** – Maintains a reference to a RouteStrategy and delegates route calculation to the selected strategy.
+**Concrete Observer (Subscriber)** – Implements the Observer interface and defines how updates are handled when the subject publishes news.
 
-**Client (MainStrategyDemo)** – Configures the context with different strategies dynamically and triggers the behavior.
+**Concrete Subject Behavior (publishNews)** – Encapsulates the logic for state change and automatically triggers notifications to all registered observers.
 
-**Strategy Setter (setRouteStrategy)** – Provides a way to change the strategy at runtime, enabling flexible behavior without modifying the context.
+**Client (MainObserverDemo)** – Registers/unregisters observers and interacts with the subject, demonstrating the dynamic one-to-many relationship.
