@@ -6,6 +6,7 @@
  their own chat rooms. Users should be able to send and receive messages in real-time.
  
 **Available Commands**
+
 /join <roomId> → Join or create a chat room
 
 /users → List active users in the current room
